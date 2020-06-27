@@ -1,5 +1,10 @@
 pipeline {
-    agent { docker 'python:3.5.1'}
+    agent {
+    docker {
+        image 'maven:3-alpine'
+        label 'docker'
+    }
+}
     stages {
         stage('build') {
             steps {
